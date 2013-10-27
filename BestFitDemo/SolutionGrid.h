@@ -12,5 +12,5 @@ class SolutionGrid : public CUGCtrl
 
 		void OnSetup();
 		COLORREF OnGetDefBackColor(int section);
-		void Update(int type, IteratorRange solution);
+		void Update(int type, IteratorRange solution, int decimals);
 	};

@@ -204,6 +204,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\OptionsDlg.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\OutputWnd.cpp"
 				>
 			</File>
@@ -387,6 +391,10 @@
 			</File>
 			<File
 				RelativePath=".\MainFrm.h"
+				>
+			</File>
+			<File
+				RelativePath=".\OptionsDlg.h"
 				>
 			</File>
 			<File

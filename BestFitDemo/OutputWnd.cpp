@@ -102,6 +102,7 @@ void COutputWnd::AppendText(LPCTSTR text)
 	{
 	int idx = m_wndOutputBestFit.AddString(text);
 	m_wndOutputBestFit.SetTopIndex(idx);
+	AdjustHorzScroll(m_wndOutputBestFit);
 	}
 
 /////////////////////////////////////////////////////////////////////////////

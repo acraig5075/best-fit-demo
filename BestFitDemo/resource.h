@@ -40,6 +40,7 @@
 #define IDR_TOOLBAR1                    313
 #define IDR_TOOLBAR2                    317
 #define IDR_TOOLBAR1_256                317
+#define IDD_OPTIONSDIALOG               322
 #define IDC_TYPECOMBO                   1000
 #define IDC_POINTSGRID                  1001
 #define IDC_SOLUTIONGRID                1002
@@ -59,18 +60,23 @@
 #define IDC_PARAMETERLABEL3             1016
 #define IDC_PARAMETERLABEL4             1017
 #define IDC_PARAMETERLABEL5             1018
+#define IDC_VERBOSITYEDIT               1019
+#define IDC_DECIMALSEDIT                1020
+#define IDC_VERBOSITYSPIN               1021
+#define IDC_DECIMALSSPIN                1022
 #define ID_GENERATE_TESTLINE            32771
 #define ID_GENERATE_TESTCIRCLE          32772
 #define ID_GENERATE_TESTELLIPSE         32773
 #define ID_BUTTON32779                  32779
+#define ID_TOOLS_OPTIONS                32781
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        322
-#define _APS_NEXT_COMMAND_VALUE         32781
-#define _APS_NEXT_CONTROL_VALUE         1019
+#define _APS_NEXT_RESOURCE_VALUE        323
+#define _APS_NEXT_COMMAND_VALUE         32782
+#define _APS_NEXT_CONTROL_VALUE         1022
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
 #endif

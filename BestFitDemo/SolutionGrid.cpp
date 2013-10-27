@@ -25,7 +25,7 @@ COLORREF SolutionGrid::OnGetDefBackColor(int /*section*/)
 	return GetSysColor(COLOR_APPWORKSPACE);
 }
 
-void SolutionGrid::Update(int type, IteratorRange solution)
+void SolutionGrid::Update(int type, IteratorRange solution, int decimals)
 	{
 	ResetAll();
 
@@ -72,7 +72,7 @@ void SolutionGrid::Update(int type, IteratorRange solution)
 
 		CUGCell cell;
 		GetCell(0, 0, &cell);
-		cell.SetNumberDecimals(6);
+		cell.SetNumberDecimals(decimals);
 
 		std::vector<double>::const_iterator value = solution.first;
 

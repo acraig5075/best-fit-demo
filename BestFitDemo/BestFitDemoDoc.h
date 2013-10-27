@@ -9,6 +9,9 @@
 #include <string>
 #include <iostream>
 
+#include "OptionsDlg.h"
+
+
 class CBestFitDemoDoc : public CDocument
 {
 	int m_adjustmentType;
@@ -17,6 +20,8 @@ class CBestFitDemoDoc : public CDocument
 	std::vector<double> m_solution;
 	std::vector<double> m_residuals;
 	std::string m_outputText;
+
+	OptionsSt m_options;
 
 	bool FileIsValidFormat(const std::string &filename);
 	void ParseFile(const std::string &filename);
@@ -48,6 +53,7 @@ public:
 public:
 	int GetAdjustmentType() const;
 	void SetAdjustmentType(int type);
+	int GetNumberDecimals() const;
 
 // Overrides
 public:
@@ -73,6 +79,7 @@ public:
 	afx_msg void OnGenerateTestcircle();
 	afx_msg void OnGenerateTestellipse();
 	virtual BOOL OnSaveDocument(LPCTSTR lpszPathName);
-	};
+  afx_msg void OnToolsOptions();
+};
 
 

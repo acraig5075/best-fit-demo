@@ -44,7 +44,7 @@ int PointsGrid::FitToWindow(int startCol, int endCol)
 	return CUGCtrl::FitToWindow(startCol, endCol);
 	}
 
-void PointsGrid::Update(IteratorRange provisionals, IteratorRange adjusted, IteratorRange residuals)
+void PointsGrid::Update(IteratorRange provisionals, IteratorRange adjusted, IteratorRange residuals, int decimals)
 	{
 	ResetAll();
 
@@ -70,7 +70,7 @@ void PointsGrid::Update(IteratorRange provisionals, IteratorRange adjusted, Iter
 		CString rowHdr;
 		CUGCell cell;
 		GetCell(0, 0, &cell);
-		cell.SetNumberDecimals(3);
+		cell.SetNumberDecimals(decimals);
 
 		std::vector<double>::const_iterator pvalue = provisionals.first;
 		std::vector<double>::const_iterator avalue = adjusted.first;

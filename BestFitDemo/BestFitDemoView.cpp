@@ -123,9 +123,11 @@ void CBestFitDemoView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 		int type = GetDocument()->GetAdjustmentType();
 		SetComboWithoutAdjustment(type);
 
-		m_pointsGrid.Update(provisionals, adjusted, residuals);
+		int decimals = GetDocument()->GetNumberDecimals();
 
-		m_solutionGrid.Update(type, solution);
+		m_pointsGrid.Update(provisionals, adjusted, residuals, decimals);
+
+		m_solutionGrid.Update(type, solution, decimals);
 
 		m_plotWnd.Update(type, provisionals, adjusted, solution);
 		}

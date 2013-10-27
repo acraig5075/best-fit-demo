@@ -85,7 +85,7 @@ IDI_OUTPUT_WND_HC       ICON                    "res\\output_wnd_hc.ico"
 IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
 IDR_MAINFRAME_256       BITMAP                  "res\\Toolbar256.bmp"
 IDR_TOOLBAR1            BITMAP                  "res\\toolbar1.bmp"
-IDR_TOOLBAR1_256        BITMAP                  "D:\\Src\\best-fit-demo\\BestFitDemo\\res\\toolbar2.bmp"
+IDR_TOOLBAR1_256        BITMAP                  "res\\toolbar2.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -177,11 +177,13 @@ BEGIN
             END
         END
     END
-    POPUP "&Generate"
+    POPUP "Tools"
     BEGIN
-        MENUITEM "Test &Line",                  ID_GENERATE_TESTLINE
-        MENUITEM "Test &Circle",                ID_GENERATE_TESTCIRCLE
-        MENUITEM "Test &Ellipse",               ID_GENERATE_TESTELLIPSE
+        MENUITEM "Options",                     ID_TOOLS_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "Generate Test &Line",         ID_GENERATE_TESTLINE
+        MENUITEM "Generate Test &Circle",       ID_GENERATE_TESTCIRCLE
+        MENUITEM "Generate Test &Ellipse",      ID_GENERATE_TESTELLIPSE
     END
     POPUP "&Help"
     BEGIN
@@ -301,6 +303,21 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,123,157,50,14
 END
 
+IDD_OPTIONSDIALOG DIALOGEX 0, 0, 146, 71
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Verbosity",IDC_STATIC,7,8,31,8
+    EDITTEXT        IDC_VERBOSITYEDIT,99,7,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_VERBOSITYSPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,135,7,10,14
+    LTEXT           "No. of decimals",IDC_STATIC,7,25,51,8
+    EDITTEXT        IDC_DECIMALSEDIT,99,24,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_DECIMALSSPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,135,24,10,14
+    DEFPUSHBUTTON   "OK",IDOK,35,50,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,89,50,50,14
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -371,6 +388,14 @@ BEGIN
         RIGHTMARGIN, 173
         TOPMARGIN, 6
         BOTTOMMARGIN, 171
+    END
+
+    IDD_OPTIONSDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 139
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -515,6 +540,7 @@ BEGIN
     ID_GENERATE_TESTLINE    "Generate test points that approximate a user-definable line."
     ID_GENERATE_TESTCIRCLE  "Generate test points that approximate a user-definable circle."
     ID_GENERATE_TESTELLIPSE "Generate test points that approximate a user-definable ellipse."
+    ID_TOOLS_OPTIONS        "Optional settings"
 END
 
 #endif    // English (U.S.) resources

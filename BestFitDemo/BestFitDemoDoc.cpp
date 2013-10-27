@@ -9,6 +9,7 @@
 #include "..\..\best-fit\BestFit.h"
 #include "MainFrm.h"
 #include "TestPointsDlg.h"
+#include "OptionsDlg.h"
 #include "..\..\test-points\TestPoints.h"
 
 #include <fstream>
@@ -28,6 +29,7 @@ BEGIN_MESSAGE_MAP(CBestFitDemoDoc, CDocument)
 	ON_COMMAND(ID_GENERATE_TESTLINE, &CBestFitDemoDoc::OnGenerateTestline)
 	ON_COMMAND(ID_GENERATE_TESTCIRCLE, &CBestFitDemoDoc::OnGenerateTestcircle)
 	ON_COMMAND(ID_GENERATE_TESTELLIPSE, &CBestFitDemoDoc::OnGenerateTestellipse)
+  ON_COMMAND(ID_TOOLS_OPTIONS, &CBestFitDemoDoc::OnToolsOptions)
 END_MESSAGE_MAP()
 
 
@@ -229,6 +231,7 @@ void CBestFitDemoDoc::DoAdjustment()
 	BestFitIO input;
 	input.numPoints = count;
 	input.points = &m_input[0];
+	input.verbosity = m_options.verbosity;
 
 	BestFitIO output;
 	output.points = outbuf;
@@ -336,6 +339,11 @@ void CBestFitDemoDoc::SetAdjustmentType(int type)
 	m_adjustmentType = type;
 	}
 
+int CBestFitDemoDoc::GetNumberDecimals() const
+	{
+	return m_options.decimals;
+	}
+
 void CBestFitDemoDoc::AddPoint(double x, double y)
 	{
 	m_input.push_back(x);
@@ -441,3 +449,12 @@ void CBestFitDemoDoc::GenerateTestPoints(int type)
 			}
 		}
 	}
+
+void CBestFitDemoDoc::OnToolsOptions()
+{
+	COptionsDlg dlg(m_options, NULL);
+	if (IDOK == dlg.DoModal())
+	{
+		DoAdjustment();
+	}
+}

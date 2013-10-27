@@ -15,7 +15,7 @@ class PointsGrid : public CUGCtrl
 		void OnSetup();
 		COLORREF OnGetDefBackColor(int section);
 		int FitToWindow(int startCol, int endCol);
-		void Update(IteratorRange provisionals, IteratorRange adjusted, IteratorRange residuals);
+		void Update(IteratorRange provisionals, IteratorRange adjusted, IteratorRange residuals, int decimals);
 		int OnMenuStart(int col,long row,int section);
 		void OnMenuCommand(int col, long row, int section, int item);
 

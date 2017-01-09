@@ -138,12 +138,12 @@ bool CBestFitDemoDoc::FileIsValidFormat(const std::string &filename)
 			std::stringstream ss(line);
 			if (first)
 				{
-				if ((ss >> count) == 0)
+				if (!(ss >> count))
 					valid = false;
 				}
 			else
 				{
-				if ((ss >> x >> comma >> y) == 0)
+				if (!(ss >> x >> comma >> y))
 					valid = false;
 				}
 			}

@@ -58,15 +58,15 @@ void CTestPointsDlg::OnOK()
 	std::stringstream ss5(param5.GetString());
 
 	double v1, v2, v3, v4, v5;
-	if ((ss1 >> v1) == 0)
+	if (!(ss1 >> v1))
 		return;
-	if ((ss2 >> v2) == 0)
+	if (!(ss2 >> v2))
 		return;
-	if ((ss3 >> v3) == 0)
+	if (!(ss3 >> v3))
 		return;
-	if ((ss4 >> v4) == 0)
+	if (!(ss4 >> v4))
 		return;
-	if ((ss5 >> v5) == 0)
+	if (!(ss5 >> v5))
 		return;
 
 	m_io.type = GetCheckedRadioButton(IDC_GENRADIO1, IDC_GENRADIO3) - IDC_GENRADIO1;

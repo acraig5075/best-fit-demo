@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DD3F776D-B23B-4F87-8B58-32D898A98380}</ProjectGuid>
+    <RootNamespace>BestFitDemo</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\boost\boost_1_59_0;..\UG\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>C:\boost\boost_1_59_0;..\UG\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\UG\Source\UGCBType.cpp" />
+    <ClCompile Include="..\UG\Source\UGCell.cpp" />
+    <ClCompile Include="..\UG\Source\UGCelTyp.cpp" />
+    <ClCompile Include="..\UG\Source\UGCnrBtn.cpp" />
+    <ClCompile Include="..\UG\Source\UGCTarrw.cpp" />
+    <ClCompile Include="..\UG\Source\UGCtrl.cpp" />
+    <ClCompile Include="..\UG\Source\UGDLType.cpp" />
+    <ClCompile Include="..\UG\Source\UGDrgDrp.cpp" />
+    <ClCompile Include="..\UG\Source\UGDrwHnt.cpp" />
+    <ClCompile Include="..\UG\Source\UGDtaSrc.cpp" />
+    <ClCompile Include="..\UG\Source\UGEdit.cpp" />
+    <ClCompile Include="..\UG\Source\UGEditBase.cpp" />
+    <ClCompile Include="..\UG\Source\ugformat.cpp" />
+    <ClCompile Include="..\UG\Source\uggdinfo.cpp" />
+    <ClCompile Include="..\UG\Source\UGGrid.cpp" />
+    <ClCompile Include="..\UG\Source\UGHint.cpp" />
+    <ClCompile Include="..\UG\Source\ughscrol.cpp" />
+    <ClCompile Include="..\UG\Source\ugLstBox.cpp" />
+    <ClCompile Include="..\UG\Source\UGMEdit.cpp" />
+    <ClCompile Include="..\UG\Source\UGMemMan.cpp" />
+    <ClCompile Include="..\UG\Source\UGMultiS.cpp" />
+    <ClCompile Include="..\UG\Source\ugprint.cpp" />
+    <ClCompile Include="..\UG\Source\ugptrlst.cpp" />
+    <ClCompile Include="..\UG\Source\ugsidehd.cpp" />
+    <ClCompile Include="..\UG\Source\UGStrOp.cpp" />
+    <ClCompile Include="..\UG\Source\ugtab.cpp" />
+    <ClCompile Include="..\UG\Source\UGTopHdg.cpp" />
+    <ClCompile Include="..\UG\Source\ugvscrol.cpp" />
+    <ClCompile Include="..\UG\Source\UGXPThemes.cpp" />
+    <ClCompile Include="BestFitDemo.cpp" />
+    <ClCompile Include="BestFitDemoDoc.cpp" />
+    <ClCompile Include="BestFitDemoView.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="OptionsDlg.cpp" />
+    <ClCompile Include="OutputWnd.cpp" />
+    <ClCompile Include="PlotWnd.cpp" />
+    <ClCompile Include="PointsGrid.cpp" />
+    <ClCompile Include="SolutionGrid.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TestPointsDlg.cpp" />
+    <ClCompile Include="XMessageBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\UG\Include\UG64Bit.h" />
+    <ClInclude Include="..\UG\Include\UGCBType.h" />
+    <ClInclude Include="..\UG\Include\UGCell.h" />
+    <ClInclude Include="..\UG\Include\ugceltyp.h" />
+    <ClInclude Include="..\UG\Include\UGCnrBtn.h" />
+    <ClInclude Include="..\UG\Include\UGCTarrw.h" />
+    <ClInclude Include="..\UG\Include\UGCtrl.h" />
+    <ClInclude Include="..\UG\Include\ugdefine.h" />
+    <ClInclude Include="..\UG\Include\UGDLType.h" />
+    <ClInclude Include="..\UG\Include\UGDrgDrp.h" />
+    <ClInclude Include="..\UG\Include\UGDrwHnt.h" />
+    <ClInclude Include="..\UG\Include\UGDtaSrc.h" />
+    <ClInclude Include="..\UG\Include\UGEdit.h" />
+    <ClInclude Include="..\UG\Include\UGEditBase.h" />
+    <ClInclude Include="..\UG\Include\ugformat.h" />
+    <ClInclude Include="..\UG\Include\uggdinfo.h" />
+    <ClInclude Include="..\UG\Include\UGGrid.h" />
+    <ClInclude Include="..\UG\Include\UGHint.h" />
+    <ClInclude Include="..\UG\Include\ughscrol.h" />
+    <ClInclude Include="..\UG\Include\uglstbox.h" />
+    <ClInclude Include="..\UG\Include\UGMEdit.h" />
+    <ClInclude Include="..\UG\Include\UGMemMan.h" />
+    <ClInclude Include="..\UG\Include\UGMultiS.h" />
+    <ClInclude Include="..\UG\Include\ugprint.h" />
+    <ClInclude Include="..\UG\Include\ugptrlst.h" />
+    <ClInclude Include="..\UG\Include\ugsidehd.h" />
+    <ClInclude Include="..\UG\Include\UGStrOp.h" />
+    <ClInclude Include="..\UG\Include\ugstruct.h" />
+    <ClInclude Include="..\UG\Include\ugtab.h" />
+    <ClInclude Include="..\UG\Include\UGTopHdg.h" />
+    <ClInclude Include="..\UG\Include\ugvscrol.h" />
+    <ClInclude Include="..\UG\Include\ugxpthemes.h" />
+    <ClInclude Include="BestFitDemo.h" />
+    <ClInclude Include="BestFitDemoDoc.h" />
+    <ClInclude Include="BestFitDemoView.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="OptionsDlg.h" />
+    <ClInclude Include="OutputWnd.h" />
+    <ClInclude Include="PlotWnd.h" />
+    <ClInclude Include="PointsGrid.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SolutionGrid.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TestPointsDlg.h" />
+    <ClInclude Include="WorldScene.h" />
+    <ClInclude Include="XMessageBox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\BestFitDemo.ico" />
+    <Image Include="res\BestFitDemoDoc.ico" />
+    <Image Include="res\output_wnd.ico" />
+    <Image Include="res\output_wnd_hc.ico" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\toolbar1.bmp" />
+    <Image Include="res\toolbar2.bmp" />
+    <Image Include="res\Toolbar256.bmp" />
+    <Image Include="res\toolbar3.bmp" />
+    <Image Include="UserImages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BestFitDemo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\BestFitDemo.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\best-fit\best-fit.vcxproj">
+      <Project>{53024319-c2d7-4a84-a898-1d94881ab9a8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\test-points\test-points.vcxproj">
+      <Project>{79301e25-7953-4112-93bd-45bc6232cd29}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="BestFitDemo.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
